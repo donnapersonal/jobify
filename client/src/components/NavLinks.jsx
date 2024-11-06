@@ -1,0 +1,32 @@
+import { useDashboardContext } from "../pages/DashboardLayout";
+import links from "../utils/links";
+import { NavLink } from "react-router-dom";
+
+// eslint-disable-next-line react/prop-types
+const NavLinks = ({ isBigSidebar }) => {
+  const { toggleSidebr, user } = useDashboardContext();
+  return (
+    <div className="nav-links">
+      {links.map((link) => {
+        const { text, path, icon } =  link;
+        const { role } = user;
+        if (role !== 'admin' && path === 'admin') return;
+        return (
+          <NavLink 
+            to={path} 
+            key={text} 
+            className="nav-link" 
+            onClick={isBigSidebar ? null : toggleSidebr}
+            // 这样点谁谁才会 active
+            end
+          >
+            <span className="icon">{icon}</span>
+            {text}
+          </NavLink>
+        )
+      })}
+    </div>
+  )
+}
+
+export default NavLinks;
