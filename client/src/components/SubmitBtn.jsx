@@ -2,6 +2,7 @@
 import { useNavigation } from "react-router-dom";
 
 const SubmitBtn = ({ formBtn }) => {
+  // This hook tells you everything you need to know about page navigation to build pending navigation indicators and optimistic UI on data mutations. 
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
   return (

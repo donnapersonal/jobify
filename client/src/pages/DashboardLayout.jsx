@@ -19,6 +19,7 @@ const userQuery = {
 
 // 在路由元素呈现之前为其提供数据
 // 必须返回一个值
+// loader provides data to the route element before it renders.
 export const loader = (queryClient) => async () => {
   try {
     return await queryClient.ensureQueryData(userQuery);

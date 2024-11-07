@@ -53,11 +53,16 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
 
+// The "not found" middleware in Express.js is used when a request is made to a route that does not exist. 
+// It catches these requests and responds with a 404 status code, indicating that the requested resource was not found.
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "Not found!" });
 });
 
 // 一定要放在最后
+// The "error" middleware in Express.js is used to handle any errors that occur during the processing of a request. 
+// It is typically used to catch unexpected errors or exceptions that are not explicitly handled in the application code. 
+// It logs the error and sends a 500 status code, indicating an internal server error.
 app.use(errorHandlerMiddleware);
 
 // 在 production 就会使用 process.env.PORT
