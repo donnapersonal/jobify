@@ -1,6 +1,6 @@
 #### Complete App
 
-[Jobify]([https://jobify.live/](https://jobify-ftoi.onrender.com))
+[Jobify](https://jobify-ftoi.onrender.com)
 
 #### Create React APP
 
