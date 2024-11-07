@@ -6,6 +6,14 @@
 
 这里使用 [VITE](https://vitejs.dev/guide/) 来创建和初始化 APP
 
+#### 本地运行
+
+打开终端，在根目录下运行如下命令
+
+```
+npm run dev
+```
+
 #### Documents 
 
 - [Styled Components Docs](https://styled-components.com/)
